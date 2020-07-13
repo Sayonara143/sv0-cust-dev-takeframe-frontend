@@ -20,21 +20,13 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
 export default {
   name: 'v-main',
   metaInfo: {
     title: 'Главная'
   },
   methods: {
-    ...mapActions([
-      'GET_USER_FROM_API'
-    ])
   },
-  mounted () {
-    this.GET_USER_FROM_API()
-  }
-
 }
 </script>
 

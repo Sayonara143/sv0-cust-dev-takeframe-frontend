@@ -72,11 +72,9 @@ export default {
         const filedata = new FormData()
         filedata.append('file', this.fileInputOne)
         filedata.append('file', this.fileInputTwo)
-        let token = localStorage.getItem('accessToken')
         axios('http://localhost:8080/api/v1/users/photoResult', {
           method: 'POST',
           headers: {
-            'Authorization': 'Authorization' + ' ' + token,
             'Content-Type': 'multipart/form-data'
           },
           data: filedata,
@@ -91,17 +89,12 @@ export default {
           })
           .catch((error) => {
             if (error.response.status === 401) {
-              this.$store.commit('SET_ISAUTH_TO_STATE', false)
-              this.$router.push({path: '/login'})
             }
           })
       } else {
         alert('Вы не загрузили изображения')
       }
     }
-  },
-  mounted () {
-    this.GET_USER_FROM_API()
   }
 }
 </script>

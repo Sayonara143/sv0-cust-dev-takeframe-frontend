@@ -29,27 +29,13 @@
               <a href="#" class="link">Инструменты</a>
             </router-link>
           </div>
-          <div v-if="!(this.$store.state.isAuth)" class="v-header-container-auth-link ">
-            <router-link :to="{name: 'v-login'}">
-              <a href="#" class="link">LogIn</a>
-            </router-link>
-            <a >/</a>
-            <router-link :to="{name: 'v-signUp'}">
-              <a href="#" class='v-header-container-auth-link-login-signup link'>SignUp</a>
-            </router-link>
-          </div>
-          <v-header-auth-user v-if="(this.$store.state.isAuth)"/>
         </div>
     </div>
 </template>
 
 <script>
-import vHeaderAuthUser from './v-header-auth-user'
 export default {
   name: 'v-header',
-  components: {
-    vHeaderAuthUser
-  }
 }
 </script>
 
